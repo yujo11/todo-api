@@ -10,6 +10,8 @@ export class CreateTodoDto {
   @IsBoolean()
   readonly completed: boolean;
 
+  //TODO DTO 데코레이터 찾아보기
+  @IsString()
   @IsIn(['primary', 'secondary', 'default'])
   readonly priority: 'primary' | 'secondary' | 'default';
 }
