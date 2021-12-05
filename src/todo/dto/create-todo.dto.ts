@@ -5,7 +5,7 @@ export class CreateTodoDto {
   readonly id: number;
 
   @IsString()
-  readonly title: string;
+  readonly text: string;
 
   @IsBoolean()
   readonly completed: boolean;

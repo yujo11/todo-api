@@ -1,4 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { CreateTodoDto } from './dto/create-todo.dto';
+import { UpdateTodoDto } from './dto/update-todo.dto';
 import { Todo } from './entities/todo.entity';
 
 @Injectable()
@@ -19,7 +21,7 @@ export class TodoService {
     return todo;
   }
 
-  deleteOne(id: number): boolean {
+  deleteById(id: number): boolean {
     const todo = this.findById(id);
 
     if (!todo) {
@@ -31,11 +33,16 @@ export class TodoService {
     return true;
   }
 
-  // create(todoData) {
+  create(todoData: CreateTodoDto) {
+    this.todos.push({
+      id: Date.now(),
+      ...todoData,
+    });
+  }
 
-  // }
-
-  // update() {
-
-  // }
+  updateById(id: number, updateData: UpdateTodoDto) {
+    const todo = this.findById(id);
+    this.deleteById(id);
+    this.todos.push({ ...todo, ...updateData });
+  }
 }
