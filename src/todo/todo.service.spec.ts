@@ -27,7 +27,6 @@ describe('TodoService', () => {
   describe('findById', () => {
     it('should return a todo', async () => {
       service.create({
-        id: 1,
         text: 'test',
         completed: false,
         priority: 'primary',
@@ -42,7 +41,6 @@ describe('TodoService', () => {
   describe('deleteById', () => {
     it('should delete a todo', async () => {
       service.create({
-        id: 1,
         text: 'test',
         completed: false,
         priority: 'primary',
@@ -67,7 +65,6 @@ describe('TodoService', () => {
   describe('create', () => {
     it('should create a todo', async () => {
       await service.create({
-        id: 1,
         text: 'test',
         completed: false,
         priority: 'primary',
@@ -83,7 +80,6 @@ describe('TodoService', () => {
   describe('update', () => {
     it('should update a todo', async () => {
       service.create({
-        id: 1,
         text: 'test',
         completed: false,
         priority: 'primary',
