@@ -35,7 +35,7 @@ export class TodoService {
 
   create(todoData: CreateTodoDto) {
     this.todos.push({
-      id: Date.now(),
+      id: this.todos.length + 1,
       ...todoData,
     });
   }
