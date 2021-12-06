@@ -10,6 +10,7 @@ import {
 } from '@nestjs/common';
 import { Todo } from './entities/todo.entity';
 import { CreateTodoDto } from './dto/create-todo.dto';
+import { UpdateTodoDto } from './dto/update-todo.dto';
 
 @Controller('todo')
 export class TodoController {
@@ -36,7 +37,7 @@ export class TodoController {
   }
 
   @Patch('/:id')
-  updateById(@Param('id') id: number, @Body() todoData: CreateTodoDto) {
+  updateById(@Param('id') id: number, @Body() todoData: UpdateTodoDto) {
     return this.todoService.updateById(id, todoData);
   }
 }

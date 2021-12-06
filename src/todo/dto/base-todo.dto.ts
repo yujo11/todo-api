@@ -1,4 +1,4 @@
-import { IsBoolean, IsIn, IsNumber, IsString } from 'class-validator';
+import { IsBoolean, IsIn, IsString } from 'class-validator';
 
 export class BaseTodoDto {
   @IsString()

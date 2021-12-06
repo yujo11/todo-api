@@ -72,6 +72,23 @@ describe('AppController (e2e)', () => {
   });
 
   describe('/todo/:id', () => {
-    it.todo('GET');
+    it('GET', () => {
+      return request(app.getHttpServer()).get('/todo/1').expect(200);
+    });
+
+    it('GET 404', () => {
+      return request(app.getHttpServer()).get('/todo/404').expect(404);
+    });
+
+    it('PATCH', () => {
+      return request(app.getHttpServer())
+        .patch('/todo/1')
+        .send({ text: 'update' })
+        .expect(200);
+    });
+
+    it('DELETE', () => {
+      return request(app.getHttpServer()).delete('/todo/1').expect(200);
+    });
   });
 });
