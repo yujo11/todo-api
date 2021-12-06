@@ -47,8 +47,28 @@ describe('AppController (e2e)', () => {
         .expect(201);
     });
 
-    // TODO UpdateDto 재정의 후 작성
-    it.todo('POST 400');
+    it('POST Invalid field 400', () => {
+      return request(app.getHttpServer())
+        .post('/todo')
+        .send({
+          text: 'test',
+          completed: false,
+          priority: 'primary',
+          fake: 'fake',
+        })
+        .expect(400);
+    });
+
+    it('POST Invalid value 400', () => {
+      return request(app.getHttpServer())
+        .post('/todo')
+        .send({
+          text: 'test',
+          completed: false,
+          priority: 'fake',
+        })
+        .expect(400);
+    });
   });
 
   describe('/todo/:id', () => {
