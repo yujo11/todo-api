@@ -90,5 +90,9 @@ describe('AppController (e2e)', () => {
     it('DELETE', () => {
       return request(app.getHttpServer()).delete('/todo/1').expect(200);
     });
+
+    it('DELETE 404', () => {
+      return request(app.getHttpServer()).delete('/todo/404').expect(404);
+    });
   });
 });
