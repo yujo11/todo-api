@@ -46,7 +46,7 @@ localhost:5000
 
 ```json
 {
-  response: [ ... ]
+  "response": "[ ... ]"
 }
 ```
 
@@ -58,11 +58,11 @@ localhost:5000
 
 ```json
 {
-  response: {
+  "response": {
     "id": "number",
     "text": "string",
     "completed": "boolean",
-    "priority": "primary" | "secondary" | "default",
+    "priority": "primary | secondary | default"
   }
 }
 ```
@@ -75,10 +75,10 @@ localhost:5000
 
 ```json
 {
-  requestBody: {
+  "requestBody": {
     "text": "string",
     "completed": "boolean",
-    "priority": "primary" | "secondary" | "default",
+    "priority": "primary | secondary | default"
   }
 }
 ```
@@ -132,7 +132,7 @@ localhost:5000
 ```json
 {
   "requestBody": {
-    "priority": "primary" | "secondary" | "default",
+    "priority": "primary | secondary | default"
   }
 }
 ```
